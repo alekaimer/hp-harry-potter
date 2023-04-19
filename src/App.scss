@@ -4,7 +4,14 @@
   padding: 2rem;
 }
 
-.card {
-  padding: 2em;
-  text-align: left;
+$grid_gap_conpensation: 0.5rem;
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid_gap_conpensation;
+
+  li {
+    width: calc(25% - $grid_gap_conpensation);
+  }
 }

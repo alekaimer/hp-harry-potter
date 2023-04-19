@@ -1,11 +1,13 @@
+@import 'tokens.scss';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  line-height: $line_height;
+  font-weight: $font-weight;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: $color_tertiary_dark;
+  background-color: $color_secondary_light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,28 +22,26 @@
   padding: 0;
 }
 
-// a {
-//   font-weight: 500;
-//   color: #646cff;
-//   text-decoration: inherit;
-// }
+a {
+  font-weight: 500;
+  color: $color_primary;
+  text-decoration: inherit;
+}
 
-// a:hover {
-//   color: #535bf2;
-// }
+a:hover {
+  color: $color_primary_dark;
+}
 
 body {
   margin: 0;
-  // display: flex;
-  // place-items: center;
-  // min-width: 320px;
-  // min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  margin: revert;
+  @include title1;
+}
+
+h2 {
+  @include title2;
 }
 
 button {
@@ -54,27 +54,28 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 }
 
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  li {
+    margin: 0;
+  }
 }
 
-li {
-  margin: 0;
-  border: 1px solid red;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -82,8 +83,10 @@ li {
     background-color: #ffffff;
   }
 
-  a:hover {
-    color: #747bff;
+  a {
+    &:hover {
+      color: #747bff;
+    }
   }
 
   button {
