@@ -14,9 +14,10 @@ $transition_default: all 0.25s;
   }
 
   &:hover {
+    cursor: default;
+
     .avatar img {
       outline-color: $color_primary;
-      cursor: pointer;
     }
   }
 
@@ -48,5 +49,9 @@ $transition_default: all 0.25s;
     &.alive {
       color: $color_success;
     }
+  }
+
+  .uninformed {
+    @include desfoque;
   }
 }

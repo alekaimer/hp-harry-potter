@@ -16,11 +16,16 @@ function Card({ data }: { data: ICharacter }) {
       </div>
       <h2>{data.name}</h2>
       <p>
-        Actor: <b>{data.actor}</b>
+        Actor: <b>{data.actor || <i className="uninformed">Uninformed</i>}</b>
       </p>
-      <p>House: {data.house}</p>
-      <p>Patronus: {data.patronus}</p>
-      <p>Date of Birth: {data.dateOfBirth}</p>
+      <p>House: {data.house || <i className="uninformed">Uninformed</i>}</p>
+      <p>
+        Patronus: {data.patronus || <i className="uninformed">Uninformed</i>}
+      </p>
+      <p>
+        Date of Birth:{' '}
+        {data.dateOfBirth || <i className="uninformed">Uninformed</i>}
+      </p>
       <p className={`aliveInformation ${data.alive ? 'alive' : ''}`}>
         {data.alive ? 'Character is alive! ' : 'Did not survive.'}
       </p>

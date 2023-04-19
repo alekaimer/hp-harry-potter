@@ -31,3 +31,8 @@ $title-line-height: 1.1;
   line-height: $title-line-height;
   margin: 0 0 8px 0;
 }
+
+@mixin desfoque {
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
+}
