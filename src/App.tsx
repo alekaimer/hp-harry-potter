@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles/App.scss'
 import Card from './components/Card/Card'
 import { ICharacter } from './dtos/ICharacter.dto'
+import { fetchRepository } from './repository/fetchRepository'
 
 function App() {
   const [characters, setCharacters] = useState<ICharacter[]>([])
@@ -12,8 +13,9 @@ function App() {
     setLoading(true)
 
     try {
-      const response = await fetch('https://hp-api.onrender.com/api/characters')
-      const data = await response.json()
+      const data = await fetchRepository(
+        'https://hp-api.onrender.com/api/characters',
+      )
       setCharacters(data)
       setLoading(false)
     } catch (error: unknown) {
