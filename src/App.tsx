@@ -12,10 +12,7 @@ function App() {
     setLoading(true)
 
     try {
-      const response = await fetch(
-        // 'https://hp-api.herokuapp.com/api/characters',
-        'https://hp-api.onrender.com/api/characters',
-      )
+      const response = await fetch('https://hp-api.onrender.com/api/characters')
       const data = await response.json()
       setCharacters(data)
       setLoading(false)
@@ -29,24 +26,21 @@ function App() {
     characters.length < 1 && getCharacters()
   }, [characters])
 
-  // return early while loading
   if (loading) {
     return <h1>Loading...</h1>
   }
 
-  // return early if there are no characters
   if (characters.length < 1) {
     return <h1>No characters found</h1>
   }
 
-  // return early if there are errors
   if (errors) {
     return <h1>{errors}</h1>
   }
 
   return (
     <div className="App">
-      <h1>Harry Potter's Landing Page</h1>
+      <h1 className="title">Harry Potter's Landing Page</h1>
       <ul className="grid">
         {!errors ? (
           characters.map((character) => (
