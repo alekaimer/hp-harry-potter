@@ -1,0 +1,73 @@
+@import 'tokens.scss';
+
+#root {
+  // max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  @include title1;
+  text-align: center;
+}
+
+$grid_gap_conpensation: 0.5rem;
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid_gap_conpensation;
+  justify-content: center;
+
+  // To limit the width of the grid
+  // @media screen and (min-width: 2300px) {
+  //   width: 2500px;
+  //   margin: 0 auto;
+  // }
+
+  li {
+    width: calc((100% / 5) - $grid_gap_conpensation);
+  }
+
+  @media screen and (min-width: 1500px) {
+    li {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (min-width: 1800px) {
+    li {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 2300px) {
+    li {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1240px) {
+    li {
+      width: calc((100% / 4) - $grid_gap_conpensation);
+    }
+  }
+
+  @media screen and (max-width: 1025px) {
+    li {
+      width: calc((100% / 3) - $grid_gap_conpensation);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    li {
+      width: calc((100% / 2) - $grid_gap_conpensation);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    li {
+      width: calc((100% / 1) - $grid_gap_conpensation);
+    }
+  }
+}
