@@ -17,11 +17,11 @@ function App() {
         'https://hp-api.onrender.com/api/characters',
       )
       setCharacters(data)
-      setLoading(false)
     } catch (error: unknown) {
       setErrors('Não foi possível carregar os personagens')
-      setLoading(false)
     }
+
+    setLoading(false)
   }
 
   useEffect(() => {
