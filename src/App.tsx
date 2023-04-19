@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.scss'
+import './styles/App.scss'
 import Card from './components/Card/Card'
 import { ICharacter } from './dtos/ICharacter.dto'
 
