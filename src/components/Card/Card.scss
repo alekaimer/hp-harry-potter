@@ -7,6 +7,12 @@ $transition_default: all 0.25s;
   text-align: left;
   margin-bottom: 1rem;
 
+  &:not(.alive) {
+    .avatar img {
+      opacity: 0.3;
+    }
+  }
+
   &:hover {
     .avatar img {
       outline-color: $color_primary;
@@ -35,4 +41,12 @@ $transition_default: all 0.25s;
     }
   }
 
+  .aliveInformation {
+    color: $color_danger;
+
+
+    &.alive {
+      color: $color_success;
+    }
+  }
 }
