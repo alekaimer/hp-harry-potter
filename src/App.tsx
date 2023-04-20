@@ -29,15 +29,15 @@ function App() {
   }, [characters])
 
   if (loading) {
-    return <h1>Loading...</h1>
-  }
-
-  if (characters.length < 1) {
-    return <h1>No characters found</h1>
+    return <p className="title">Loading...</p>
   }
 
   if (errors) {
-    return <h1>{errors}</h1>
+    return <p className="title">{errors}</p>
+  }
+
+  if (characters.length < 1) {
+    return <p className="title">No characters found</p>
   }
 
   return (
@@ -51,7 +51,7 @@ function App() {
             </li>
           ))
         ) : (
-          <h1>{errors}</h1>
+          <p>{errors}</p>
         )}
       </ul>
     </div>
