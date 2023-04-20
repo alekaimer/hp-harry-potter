@@ -1,4 +1,3 @@
-import React from 'react'
 import './Card.scss'
 import { ICharacter } from '../../dtos/ICharacter.dto'
 
@@ -11,10 +10,10 @@ function Card({ data }: { data: ICharacter }) {
             data.image ||
             'https://via.placeholder.com/900x1200/000000/FFFFFF/?text=No+Image'
           }
-          alt={data.name}
+          alt={data.image ? data.name : 'No image'}
         />
       </div>
-      <h2>{data.name}</h2>
+      <h2>{data.name || <i className="uninformed">Uninformed</i>}</h2>
       <p>
         Actor: <b>{data.actor || <i className="uninformed">Uninformed</i>}</b>
       </p>
